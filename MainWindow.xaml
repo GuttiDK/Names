@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Names"
         mc:Ignorable="d"
-        Title="Names" Height="180" Width="260">
+        Title="Names" Height="208" Width="328">
     <Grid Margin="10">
 
         <Grid.RowDefinitions>
@@ -26,6 +26,7 @@
             <Button x:Name="btnAdd" Margin="0,5,0,0" Click="ButtonAddName_Click">Add Name</Button>
             <Button x:Name="btnRemove" Margin="0,5,0,0" Click="ButtonRemoveName_Click">Remove Name</Button>
             <Button x:Name="btnClear" Margin="0,5,0,0" Click="ButtonClearNames_Click">Clear Names</Button>
+            <Button x:Name="btnRemAllName" Margin="0,5,0,0" Click="ButtonAllName_Click">Remove All Name</Button>
         </StackPanel>
 
     </Grid>
