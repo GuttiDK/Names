@@ -15,12 +15,20 @@ GuttiDK
 ## Features
 
 - Add names to the list.
-- Delete names from the list.
-- Clear the list.
+- Delete one name from the list.
+- Delete all names with the same name.
+- Clear the list all names.
 
 ## Updates
 
-**Version 1.0.0** (21/08/2023)
+**Version 1.0.1** (08/09/2023) - Current Version
+- Added a new feature to the application.
+- Added Add check so list only can be legth of 6
+- Added Remove only one name from list
+- Added Remove all names with same name
+- Added Clear all names from list 
+
+**Version 1.0.0** (08/09/2023)
 - Initial release of Names.
 - Features include Add, Delete and Clear names.
 

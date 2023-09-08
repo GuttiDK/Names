@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace Names
 {
@@ -27,19 +28,35 @@ namespace Names
 
         private void ButtonAddName_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtName.Text) && !lstNames.Items.Contains(txtName.Text))
+            if (!string.IsNullOrWhiteSpace(txtName.Text))
             {
-                lstNames.Items.Add(txtName.Text);
-                txtName.Clear();
+                if (lstNames.Items.Count >= 6)
+                {
+                    lstNames.Items.Clear();
+                    txtName.Clear();
+                }
+                else
+                {
+                    lstNames.Items.Add(txtName.Text);
+                    txtName.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("There are no names to remove.", "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
             }
         }
 
         private void ButtonRemoveName_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtName.Text) && lstNames.Items.Contains(txtName.Text))
+            if (!string.IsNullOrWhiteSpace(txtName.Text))
             {
                 lstNames.Items.Remove(txtName.Text);
                 txtName.Clear();
+            }
+            else
+            {
+                MessageBox.Show("There are no names to remove.", "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
             }
         }
 
@@ -49,6 +66,30 @@ namespace Names
             {
                 lstNames.Items.Clear();
                 txtName.Clear();
+            }
+            else
+            {
+                MessageBox.Show("There are no names to remove.", "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+            }
+        }
+
+        private void ButtonAllName_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstNames.Items.Count > 0 && lstNames.Items.Contains(txtName.Text))
+            {
+                foreach (var item in lstNames.Items)
+                {
+                    if (item.ToString() == txtName.Text)
+                    {
+                        lstNames.Items.Remove(item);
+                        txtName.Clear();
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("There are no names to remove.", "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
             }
         }
     }
